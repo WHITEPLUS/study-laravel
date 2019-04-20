@@ -36,21 +36,21 @@ $ docker-compose up -d nginx mysql
 ### 6. PHPパッケージのインストール
 ```
 $ cd ~/your/workspace/study-laravel/laradock-study_laravel
-$ docker-compose exec workspace bash
+$ docker-compose exec --user=laradock workspace bash
 # composer install
 ```
 
 ### 7. Laravelの.envのコピー
 ```
 $ cd ~/your/workspace/study-laravel/laradock-study_laravel
-$ docker-compose exec workspace bash
+$ docker-compose exec --user=laradock workspace bash
 # cp .env.example .env
 ```
 
 ### 8. アプリケーションキーの設定
 ```
 $ cd ~/your/workspace/study-laravel/laradock-study_laravel
-$ docker-compose exec workspace bash
+$ docker-compose exec --user=laradock workspace bash
 # php artisan key:generate
 ```
 
@@ -84,7 +84,7 @@ http://localhost/
 コマンドの実行（Composer、Artisan、PHPUnit等）はworkspaceコンテナの中で行ってください。
 ```
 $ cd ~/your/workspace/study-laravel/laradock-study_laravel
-$ docker-compose exec workspace bash
+$ docker-compose exec --user=laradock workspace bash
 ```
 
 ### DBへのアクセス
